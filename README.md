@@ -48,3 +48,6 @@ The Flight Reservation System is designed to simplify booking processes and enha
 - **Admins/Users**: Can interact with the database via SSMS or connected applications to manage flight reservations, check availabilities, and perform CRUD operations on user data.
 - **Analysts**: Use Power BI to generate insights, track performance, and support decision-making processes.
 
+- ###Power BI dashboard![image](https://github.com/HemantGaikwad7/Database-Airline-Booking-System/assets/144754808/aec11f2f-c9a4-455e-aff5-a54ce181f252)
+
+
