@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flight Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input, button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flight List</h1>
+
+    <!-- Flight Table -->
+    <table>
+        <thead>
+            <tr>
+                <th>Flight ID</th>
+                <th>Arrival Airport Code</th>
+                <th>Departure Airport Code</th>
+                <th>Arrival Time</th>
+                <th>Departure Time</th>
+                <th>Type of Flight</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for flight in flights %}
+            <tr>
+                <td>{{ flight.Flight_Id }}</td>
+                <td>{{ flight.Arrival_Airport_Code }}</td>
+                <td>{{ flight.Departure_Airport_Code }}</td>
+                <td>{{ flight.Arrival_Time }}</td>
+                <td>{{ flight.Departure_Time }}</td>
+                <td>{{ flight.TypeOfFlight }}</td>
+                <td>
+                    <!-- Delete Button -->
+                    <form action="/flight/delete/{{ flight.Flight_Id }}" method="post" style="display: inline;">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
